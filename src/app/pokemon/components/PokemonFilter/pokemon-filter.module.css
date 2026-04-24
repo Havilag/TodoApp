@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #2b0a0a 0%, #1a1a1a 100%);
+    border: 2px solid #4a3fa8;
+    outline: none;
+    padding: 12px 20px;
+    color: white;
+    transition: all 0.3s ease;
+    width: 350px;
+}
+
+.container input {
+    outline: none;
+}

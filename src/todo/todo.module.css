@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: white;
+    box-sizing: border-box;
+}
+
+.container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.inputgroup{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.inputgroup input {
+    display: flex;
+    width: 300px;
+    height: auto;
+}
+
+.inputgroup input {
+    display: flex;
+    border: 1px solid black;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button button{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 100px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    box-shadow: 0px 0px 19px -1px rgba(0, 0, 0, 0.67);
+    -webkit-box-shadow: 0px 0px 19px -1px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 0px 0px 19px -1px rgba(0, 0, 0, 0.67);
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 150px;
+    width: 100%;
+}
+
+.pendientes{
+    display: flex;
+    border: 1px solid white;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.pendientes button{
+    cursor: pointer;
+}
+

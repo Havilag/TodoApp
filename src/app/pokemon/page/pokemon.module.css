@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    padding: 20px;
+    font-family: 'Arial Black', sans-serif;
+    height: 100vh; 
+    overflow: hidden; 
+    box-sizing: border-box;
+}
+
+.container-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding-top: 25px;
+    width: 100%;
+    justify-content: center;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ffcb05 transparent;
+    height: 100%;
+}
+
+
+.pokemonCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(20, 20, 20, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 18px;
+    padding: 15px;
+    width: 280px;
+    color: white;
+}
+
+.pokemonCard:hover {
+    transform: translateY(-10px);
+    border-color: #00b4d8; /* O el color del tipo de pokemon */
+    box-shadow: 0 15px 40px rgba(0, 180, 216, 0.2);
+}
+
+.pokemon-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.pokemon-image img {
+    width: 140px;
+    height: 140px;
+}
+
+.pokemmon-stat {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    gap: 30px;
+    font-style: italic;
+
+}
+
+.header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header-card h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: white
+}
+
+.description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.container-button {
+    display: flex;
+    gap: 20px;
+}
+
+.container-button button {
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 12px 24px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.info ul {
+    display: flex;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+.info li {
+    font-weight: 500;
+    justify-content: start;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 8px 8px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+}
+
+.Pokemon-filter{
+    outline: none;
+}
