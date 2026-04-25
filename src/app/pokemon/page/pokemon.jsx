@@ -9,7 +9,8 @@ export function Pokemon() {
 
     const { pokemon, loading, error, nextPokemon, prevPokemon } = PokemonGet();
     const [selectAbility, setAbility] = useState(null);
-
+    const [searchPokemon, setSearchPokemon] = useState("");
+    const [pagina, SetPagina] = useState(1);
 
     if (loading) {
         return (
@@ -18,6 +19,8 @@ export function Pokemon() {
             </div>
         )
     }
+
+    const FilterPokemon = pokemon.filter((texto) => texto.name.includes(searchPokemon));
 
     const GetAbility = async (url) => {
         try {
@@ -30,25 +33,34 @@ export function Pokemon() {
         }
     }
 
+    const nextPagina = () => {
+        nextPokemon();
+        SetPagina(pagina + 1);
+    };
 
+    const prevPagina = () => {
+        if (pagina > 1) {
+            prevPokemon();
+            SetPagina(pagina - 1);
+        }
+    }
 
     return (
         <div className={styles.container}>
             <header className={styles["Pokemon-filter"]}>
-                <PokemonFilter />
+                <PokemonFilter PokemonSearch={setSearchPokemon} />
             </header>
 
             <div className={styles["container-grid"]}>
-                {
-                    pokemon.map((DatosPokemon) => (
-
-                        <div className={styles.pokemonCard}>
+                {FilterPokemon.length > 0 ? (
+                    FilterPokemon.map((DatosPokemon) => (
+                        <div key={DatosPokemon.id} className={styles.pokemonCard}>
                             <div className={styles["header-card"]}>
                                 <h2>{DatosPokemon.name}</h2>
                             </div>
 
                             <div className={styles["pokemon-image"]}>
-                                <img src={DatosPokemon.image} />
+                                <img src={DatosPokemon.image} alt={DatosPokemon.name} />
                             </div>
 
                             <div className={styles["pokemmon-stat"]}>
@@ -58,27 +70,31 @@ export function Pokemon() {
                             </div>
 
                             <div className={styles.description}>
-                                <p>Ataque: {DatosPokemon.stats.attack}</p>
-                                <p>Defenza: {DatosPokemon.stats.defense}</p>
+                                <p>Ataque: {DatosPokemon.stats?.attack}</p>
+                                <p>Defenza: {DatosPokemon.stats?.defense}</p>
 
                                 <div className={styles.info}>
                                     <h3>Habilidades</h3>
                                     <ul>
                                         {DatosPokemon.abilities.map((ability, index) => (
-                                            <li key={index}>
-                                                {ability.name}
-                                            </li>
+                                            <li key={index}>{ability.name}</li>
                                         ))}
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))
+                ) : (
+                    <div className={styles.noResults}>
+                        <h2>No se encontraron resultados para "{searchPokemon}"</h2>
+                    </div>
+                )}
             </div>
-            
+
             <div className={styles["container-button"]}>
-                <button onClick={prevPokemon}><StepBack /></button>
-                <button onClick={nextPokemon}><StepForward /></button>
+                <button onClick={prevPagina}><StepBack /></button>
+                <p className={styles.pagina}>{pagina}</p>
+                <button onClick={nextPagina}><StepForward /></button>
             </div>
 
         </div>
