@@ -17,7 +17,7 @@ export const PokemonService = async ({ limit = 10, start = 0 }) => {
             weight: detail.weight / 10,
             height: detail.height / 10,
             image: detail.sprites.other["official-artwork"].front_default,
-            abilities: detail.abilities.map(a => ({ name: a.ability.name })),
+            abilities: detail.abilities.map(detailAbility => ({ name: detailAbility.ability.name })),
             stats: {
                 hp: detail.stats[0].base_stat,
                 attack: detail.stats[1].base_stat,
