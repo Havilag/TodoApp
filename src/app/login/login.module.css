@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+}
+
+.header-from{
+    padding: 20px;
+    font-size: 30px;
+}
+
+.container input{
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.submit{
+    display: flex;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 10px 50px;
+}
