@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { UseAuth } from "../auth/hooks/use-auth"
+import { UseAuth } from "../../hooks/use-auth"
 import { useState } from "react";
 import styles from "./login.module.css"
 

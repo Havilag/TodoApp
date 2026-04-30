@@ -4,12 +4,12 @@ import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import { Sidebar } from "../components/sidebar/sidebar";
 import { DashboardLayout } from "../layouts/dashboard-layout";
-import { Todo } from "../todo/todo";
-import { ListaPendiente } from "../page/lista-pendiente/lista-pendiente";
-import { ListaRealizada } from "../page/lista-realizada/lista-realizada";
-import { Home } from "../page/home/home";
-import { Pokemon } from "../app/pokemon/page/pokemon";
-import { Login } from "../app/login/login";
+import { Todo } from "../features/todo/todo";
+import { ListaPendiente } from "../features/todo/page/lista-pendiente/lista-pendiente";
+import { ListaRealizada } from "../features/todo/page/lista-realizada/lista-realizada";
+import { Home } from "../features/todo/page/home/home";
+import { Pokemon } from "../features/pokemon/page/pokemon";
+import { Login } from "../features/auth/page/login/login";
 import { ProtectedRouter } from "./protected-router";
 
 

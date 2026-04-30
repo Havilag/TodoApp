@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Sidebar } from "../components/sidebar/sidebar";
 import styles from "./dashboard-layout.module.css"
 import { useState } from "react";
-import { useTask } from "../hooks/tasks";
+import { useTask } from "../features/todo/hooks/tasks";
 
 export function DashboardLayout() {
 
