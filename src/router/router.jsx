@@ -4,7 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import { Sidebar } from "../components/sidebar/sidebar";
 import { DashboardLayout } from "../layouts/dashboard-layout";
-import { Todo } from "../features/todo/todo";
+import { Todo } from "../features/todo/page/todoPage/todo";
 import { ListaPendiente } from "../features/todo/page/lista-pendiente/lista-pendiente";
 import { ListaRealizada } from "../features/todo/page/lista-realizada/lista-realizada";
 import { Home } from "../features/todo/page/home/home";
