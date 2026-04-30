@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { PokemonService } from "../services/pokemon-service";
 
 
+const cache = {};
+
 export const PokemonGet = () => {
 
     const [start, SetStart] = useState(0);
@@ -24,11 +26,22 @@ export const PokemonGet = () => {
 
 
     useEffect( () => {
+        if(cache[start]){
+            setPokemon(cache[start]);
+            setLoading(false);
+            return;
+        }
+
+        setLoading(true);
+
         PokemonService({limit,start})
-        .then(setPokemon)
-        .catch((error) => setError(error.message))
+        .then((data) => {
+            cache[start] = data;
+            setPokemon(data);
+        })
+        .catch(setError)
         .finally(() => setLoading(false));
-    },[start])
+    },[start]);
 
     return {
         pokemon,

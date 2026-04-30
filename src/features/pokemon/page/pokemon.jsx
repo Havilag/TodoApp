@@ -20,7 +20,8 @@ export function Pokemon() {
         )
     }
 
-    const FilterPokemon = pokemon.filter((texto) => texto.name.includes(searchPokemon));
+    const FilterPokemon = pokemon.filter((texto) => 
+        texto.name.includes(searchPokemon));
 
     const GetAbility = async (url) => {
         try {
