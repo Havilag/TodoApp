@@ -26,6 +26,14 @@ export const Login = () => {
             }
     }
 
+    const sendformuser= (username) =>{
+        setForm({...form, username});
+    }
+
+    const sendformpass = (password) =>{
+        setForm({...form,password});
+    }
+
     return (
         <form className={styles.container} onSubmit={handleSubmit}>
             <div className={styles["header-from"]}>
@@ -34,11 +42,11 @@ export const Login = () => {
 
             <input placeholder="Username" 
             className={styles.username} 
-            onChange={(e) => setForm({...form, username: e.target.value})}/>
+            onChange={(e) => sendformuser(e.target.value)}/>
 
             <input placeholder="password" type="password"
             className={styles.password} 
-            onChange={(e) => setForm({...form, password: e.target.value})}/>
+            onChange={(e) => sendformpass(e.target.value)}/>
 
             <button className={styles.submit}>
                 Submit

@@ -1,20 +1,20 @@
 import { LoginService } from "../services/auth-service";
-import { AutheStore } from "../store/auth-store"
+import { AuthenticationStore } from "../store/auth-store"
 
 
 export const UseAuth = () => {
 
-    const {token, setToken, logout} = AutheStore();   
+    const {accessToken, setToken, logout} = AuthenticationStore();   
 
     const login = async( {username, password}) =>{
-        const token = await LoginService({username,password})
-        setToken(token);
+        const tokenRecovered = await LoginService({username,password})
+        setToken(tokenRecovered);
     } 
 
     return{
-        token,
+        accessToken,
         login,
         logout,
-        isAuthenticated: !!token,
+        isAuthenticated: !!accessToken,
     };
 };

@@ -10,5 +10,6 @@ export const LoginService = async ({ username, password }) => {
         
     });
 
-    return response.data.token;
+    const accesToken = response.data.token;
+    return accesToken;
 }

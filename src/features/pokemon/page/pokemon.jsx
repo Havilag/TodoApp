@@ -4,13 +4,14 @@ import { PokemonGet } from "../hooks/pokemon-get";
 import styles from "./pokemon.module.css"
 import { useState } from "react";
 import { PokemonFilter } from "../components/PokemonFilter/pokemon-filter";
+import { PokemonNav } from "../hooks/pokemon-nav";
 
 export function Pokemon() {
 
     const { pokemon, loading, error, nextPokemon, prevPokemon } = PokemonGet();
+    const { page, start } = PokemonNav();
     const [selectAbility, setAbility] = useState(null);
     const [searchPokemon, setSearchPokemon] = useState("");
-    const [pagina, SetPagina] = useState(1);
 
     if (loading) {
         return (
@@ -36,14 +37,10 @@ export function Pokemon() {
 
     const nextPagina = () => {
         nextPokemon();
-        SetPagina(pagina + 1);
     };
 
     const prevPagina = () => {
-        if (pagina > 1) {
-            prevPokemon();
-            SetPagina(pagina - 1);
-        }
+        prevPokemon();
     }
 
     return (
@@ -93,8 +90,8 @@ export function Pokemon() {
             </div>
 
             <div className={styles["container-button"]}>
-                <button onClick={prevPagina}><StepBack /></button>
-                <p className={styles.pagina}>{pagina}</p>
+                <button onClick={prevPagina} disabled={start===0}><StepBack /></button>
+                <p className={styles.pagina}>{page}</p>
                 <button onClick={nextPagina}><StepForward /></button>
             </div>
 

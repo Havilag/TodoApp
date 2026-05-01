@@ -2,15 +2,17 @@ import { LogOut } from "lucide-react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export const AutheStore = create(
+export const AuthenticationStore = create(
     persist((set) => ({
-            token: null,
-            setToken: (token) => set({token}),
-            logout: () => set({ token: null}),
+            accessToken: null,
+
+            setToken: (newToken) => set({accessToken: newToken}),
+
+            logout: () => set({ accessToken: null}),
         }),
 
         {
-            name: "auth-storage",
+            name: "authentication-storage",
         },
 
     ),
